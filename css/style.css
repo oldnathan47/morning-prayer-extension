@@ -1,0 +1,74 @@
+#body {
+    height: auto;
+  }
+  
+  #background {
+    background-color: white;
+    padding: 8px;
+    margin: 8px;
+  }
+  
+  #initialTitle {
+    font-size: 18px;
+    text-align: right;
+    color: darkgoldenrod;
+  }
+  
+  #title {
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  #row {
+    background-color: goldenrod;
+    margin: 5px;
+    border-radius: 15px;
+    border: 10px;
+    border-color: white;
+    color: black;
+  }
+  
+  #lastRow {
+    margin: 5px;
+    text-align: center;
+    display: block;
+  }
+  
+  #lastRow a {
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  a:hover {
+    background-color: goldenrod;
+  }
+  
+  #paragraph {
+    text-align: right;
+  }
+  
+  #titleColumn1 {
+    padding: 3px;
+  }
+  
+  #titleColumn2 {
+    padding: 3px;
+  }
+  
+  #firstLesson {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  #secondLesson {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  #psalms {
+    color: black;
+    text-decoration: underline;
+  }
+  

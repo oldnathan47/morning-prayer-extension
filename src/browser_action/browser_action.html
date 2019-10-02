@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+      integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body id="body">
+    <div id="background" class="ui grid">
+      <div class="row">
+        <div id="titleColumn1" class=" nine wide column">
+          <h4 id="initialTitle">Morning Prayer</h4>
+        </div>
+        <div id="titleColumn2" class="seven wide column">
+          <h4 id="title"></h4>
+        </div>
+      </div>
+      <div id="row" class="row">
+        <div class="seven wide column">
+          <p>First Lesson:</p>
+        </div>
+        <div class="nine wide column">
+          <p id="paragraph"><a id="firstLesson" target="_blank"></a></p>
+        </div>
+      </div>
+      <div id="row" class="row">
+        <div class="seven wide column">
+          <p>Second Lesson:</p>
+        </div>
+        <div class="nine wide column">
+          <p id="paragraph"><a id="secondLesson" target="_blank"></a></p>
+        </div>
+      </div>
+      <div id="row" class="row">
+        <div class="seven wide column">
+          <p>Psalm(s):</p>
+        </div>
+        <div class="nine wide column">
+          <p id="paragraph"><a id="psalms" target="_blank"></a></p>
+        </div>
+      </div>
+      <div id="lastRow" class="row">
+        <a href="http://bcp2019.anglicanchurch.net/" target="_blank">Book of Common Prayer</a>
+      </div>
+    </div>
+  </body>
+  <script src="/js/lectionary.js"></script>
+</html>
