@@ -1252,7 +1252,6 @@ var firstLesson = [
   
   const today = new Date(); 
   const currentDate = today.getDate().toString();
-  // prettier-ignore
   const currentMonth = today.toLocaleString("default", { month: "long" }).toLowerCase();
   const currentMonthNumber = today.getMonth() + 1;
   
