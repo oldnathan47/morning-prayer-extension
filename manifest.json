@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "The 3 lessons from the Book of Common Prayer you need for your Morning Prayer",
-  "homepage_url": "https://github.com/oldnathan47",
+  "homepage_url": "https://github.com/oldnathan47/morning-prayer-extension",
   "icons": {
     "16": "icons/bible-icon16.png",
     "48": "icons/bible-icon48.png"
