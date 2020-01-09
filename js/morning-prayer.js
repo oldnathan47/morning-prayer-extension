@@ -1,39 +1,39 @@
 //data -- scroll for code
 var firstLesson = [
     {
-      january: [
-        { 1: "Genesis 1" },
-        { 2: "Genesis 2" },
-        { 3: "Genesis 3" },
-        { 4: "Genesis 4" },
-        { 5: "Genesis 5" },
-        { 6: "Genesis 6" },
-        { 7: "Genesis 7" },
-        { 8: "Genesis 8" },
-        { 9: "Genesis 9" },
-        { 10: "Genesis 10:1-9,15-22,30-32" },
-        { 11: "Genesis 11:1-9,27-32 " },
-        { 12: "Genesis 12" },
-        { 13: "Genesis 13" },
-        { 14: "Genesis 14" },
-        { 15: "Genesis 15" },
-        { 16: "Genesis 16" },
-        { 17: "Genesis 17" },
-        { 18: "Genesis 18" },
-        { 19: "Genesis 19:1-29" },
-        { 20: "Genesis 20" },
-        { 21: "Genesis 21:1-21" },
-        { 22: "Genesis 22" },
-        { 23: "Genesis 23" },
-        { 24: "Genesis 24:1-28,53-58" },
-        { 25: "Acts 9:1-22" },
-        { 26: "Genesis 25:7-11,19-34" },
-        { 27: "Genesis 26:1-25" },
-        { 28: "Genesis 27:1-13,18-36,49-40" },
-        { 29: "Genesis 28" },
-        { 30: "Genesis 29:1-28" },
-        { 31: "Genesis 30:1-2,22-43" }
-      ]
+      january: {
+        1: "Genesis 1",
+        2: "Genesis 2",
+        3: "Genesis 3",
+        4: "Genesis 4",
+        5: "Genesis 5",
+        6: "Genesis 6",
+        7: "Genesis 7",
+        8: "Genesis 8",
+        9: "Genesis 9",
+        10: "Genesis 10:1-9,15-22,30-32",
+        11: "Genesis 11:1-9,27-32 ",
+        12: "Genesis 12",
+        13: "Genesis 13",
+        14: "Genesis 14",
+        15: "Genesis 15",
+        16: "Genesis 16",
+        17: "Genesis 17",
+        18: "Genesis 18",
+        19: "Genesis 19:1-29",
+        20: "Genesis 20",
+        21: "Genesis 21:1-21",
+        22: "Genesis 22",
+        23: "Genesis 23",
+        24: "Genesis 24:1-28,53-58",
+        25: "Acts 9:1-22",
+        26: "Genesis 25:7-11,19-34",
+        27: "Genesis 26:1-25",
+        28: "Genesis 27:1-13,18-36,49-40",
+        29: "Genesis 28",
+        30: "Genesis 29:1-28",
+        31: "Genesis 30:1-2,22-43"
+      }
     },
     {
       february: {
@@ -1269,7 +1269,7 @@ var firstLesson = [
   function getLesson(lesson, identifier) {
     for (let i = 0; i < lesson.length; i++) {
       for (const month in lesson[i]) {
-        if (currentMonth === month) {
+          if (currentMonth === month) {
           let correctMonth = lesson[i][month];
           for (const date in correctMonth) {
             if (currentDate === date) {
@@ -1286,11 +1286,36 @@ var firstLesson = [
       }
     }
   }
+ 
+  function appendVerse(verse, identifier) {
+    switch (identifier) {
+      case 1:
+        document.getElementById("firstLesson").innerHTML = verse;
+        document
+          .getElementById("firstLesson")
+          .setAttribute("href", `http://www.esv.org/${verse}`);
+        break;
   
-  function appendAltVerse(verse, indentifier) {
+      case 2:
+        document.getElementById("secondLesson").innerHTML = verse;
+        document
+          .getElementById("secondLesson")
+          .setAttribute("href", `http://www.esv.org/${verse}`);
+        break;
+  
+      case 3:
+        document.getElementById("psalms").innerHTML = verse;
+        document
+          .getElementById("psalms")
+          .setAttribute("href", `http://www.esv.org/Psalm${verse}`);
+        break;
+    }
+  }
+
+  function appendAltVerse(verse, identifier) {
     let book = verse.replace(/\d/g, "").replace(/\s/g, ""); //eliminate numbers and white space
     let chapter = verse.replace(/\D/g, ""); //eliminate non-digit characters
-    switch (indentifier) {
+    switch (identifier) {
       case 1:
         if (verse.includes("Ecclesiasticus")) {
           document.getElementById("firstLesson").innerHTML = verse;
@@ -1329,31 +1354,6 @@ var firstLesson = [
             "href",
             `https://www.biblestudytools.com/nrsa/${book}/${chapter}.html`
           );
-        break;
-    }
-  }
-  
-  function appendVerse(verse, indentifier) {
-    switch (indentifier) {
-      case 1:
-        document.getElementById("firstLesson").innerHTML = verse;
-        document
-          .getElementById("firstLesson")
-          .setAttribute("href", `http://www.esv.org/${verse}`);
-        break;
-  
-      case 2:
-        document.getElementById("secondLesson").innerHTML = verse;
-        document
-          .getElementById("secondLesson")
-          .setAttribute("href", `http://www.esv.org/${verse}`);
-        break;
-  
-      case 3:
-        document.getElementById("psalms").innerHTML = verse;
-        document
-          .getElementById("psalms")
-          .setAttribute("href", `http://www.esv.org/Psalm${verse}`);
         break;
     }
   }
