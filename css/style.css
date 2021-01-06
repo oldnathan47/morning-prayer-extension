@@ -7,6 +7,10 @@
     padding: 8px;
     margin: 8px;
   }
+
+  #titleRow {
+    justify-content: center;
+  }
   
   #initialTitle {
     font-size: 18px;
@@ -25,7 +29,7 @@
     border-radius: 15px;
     border: 10px;
     border-color: white;
-    color: black;
+    color: black
   }
   
   #lastRow {

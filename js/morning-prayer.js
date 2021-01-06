@@ -1247,13 +1247,81 @@ var firstLesson = [
       }
     }
   ];
-  
+
+  var holyDays = [
+    {
+      'Ash Wednesday': {
+        'First Lesson': 'Isa 58:1-12',
+        'Second Lesson': 'Luke 18:9-14',
+        'Psalms': '38'
+      }
+    },
+    {
+      'Maunday Thursday': {
+          'First Lesson': 'Dan 9',
+          'Second Lesson': 'John 13:1-20',
+          'Psalms': '41'
+      }
+    },
+    {
+      'Good Friday': {
+        'First Lesson': 'Lam 3:1-36',
+        'Second Lesson': 'John 18',
+        'Psalms': '40'
+      }
+    },
+    {
+      'Holy Saturday': {
+        'First Lesson': 'Lam 3:37-58',
+        'Second Lesson': 'Heb 4',
+        'Psalms': '88'
+      }
+    },
+    {
+      'Easter': {
+        'First Lesson': 'Exodus 15',
+        'Second Lesson': 'Acts 2:22-32',
+        'Psalms': '118'
+      }
+    },
+    {
+      'Ascension Sunday': {
+        'First Lesson': '2 Kings 2',
+        'Second Lesson': 'Eph 4:1-17',
+        'Psalms': '8, 47'
+      }
+    },
+    {
+      'Pentacost': {
+        'First Lesson': 'Isa 11',
+        'Second Lesson': 'John 16:1-15',
+        'Psalms': '48'
+      }
+    }
+  ];
+
+  var year = {
+    '17 february': 'Ash Wednesday',
+    '1 april': 'Maunday Thursday',
+    '2 april': 'Good Friday',
+    '3 april': 'Holy Saturday',
+    '4 april': 'Easter',
+    '13 may': 'Ascension Day',
+    '23 may': 'Pentacost'
+  }
+
   //code
   
   const today = new Date(); 
-  const currentDate = today.getDate().toString();
+  const currentDay = today.getDate().toString();
   const currentMonth = today.toLocaleString("default", { month: "long" }).toLowerCase();
+  const currentYear = today.toLocaleString("default", { year: "numeric" }).toLowerCase();
+  const currentDate = currentDay + ' ' + currentMonth;
   const currentMonthNumber = today.getMonth() + 1;
+
+  console.log(currentDay);
+  console.log(currentMonth);
+  console.log(currentYear);
   
   getTitle();
   getLesson(firstLesson, 1);
@@ -1261,9 +1329,19 @@ var firstLesson = [
   getLesson(psalms, 3);
   
   function getTitle() {
+    if (currentMonthNumber >= 2 || currentMonthNumber <= 6) {
+      for (const holyDay in year) {
+        if (currentDate === holyDay) {
+          document.getElementById(
+            "title"
+          ).innerHTML = `for ${year[currentDate]}`;
+          return;
+        }
+      }
+    }
     document.getElementById(
       "title"
-    ).innerHTML = `for ${currentMonthNumber}/${currentDate}`;
+    ).innerHTML = `for ${currentMonthNumber}/${currentDay}`;
   }
   
   function getLesson(lesson, identifier) {
@@ -1272,7 +1350,7 @@ var firstLesson = [
           if (currentMonth === month) {
           let correctMonth = lesson[i][month];
           for (const date in correctMonth) {
-            if (currentDate === date) {
+            if (currentDay === date) {
               var verse = lesson[i][month][date];
               let exceptions = /Wisdom|Judith|Ecclesiasticus/.test(verse);
               if (!exceptions) {
